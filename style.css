@@ -1,9 +1,40 @@
+<<<<<<< HEAD
 *, *::before, *::after {
+=======
+/* ============================================
+   Finance Tracker - style.css
+   Author: Sumit Kumar
+   Description: All styling for the finance
+   tracker app. Dark theme with green accents.
+   ============================================ */
+
+
+/* ── CSS Variables (change colors from here) ── */
+:root {
+  --bg-main: #0d0f14;
+  --bg-card: #151820;
+  --bg-input: #1c2030;
+  --border: #252a3a;
+  --accent-green: #00e5a0;
+  --accent-red: #ff4f6d;
+  --accent-blue: #4f8eff;
+  --accent-yellow: #ffd166;
+  --text-primary: #eef0f7;
+  --text-secondary: #7a8099;
+  --radius: 16px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ── Reset - removes default browser spacing ── */
+* {
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 :root {
   --bg:        #080c14;
   --bg2:       #0d1220;
@@ -34,19 +65,41 @@ body {
 
 a { text-decoration: none; color: inherit; }
 
+=======
+
+/* ── Body - dark background with subtle grid ── */
+body {
+  background: var(--bg-main);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  min-height: 100vh;
+  /* this creates the dot grid pattern you see in background */
+  background-image: radial-gradient(circle at 1px 1px, #1e2235 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+
+/* ── Navbar ── */
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
   border-bottom: 1px solid var(--border);
+<<<<<<< HEAD
   background: rgba(8,12,20,0.9);
+=======
+  /* frosted glass effect */
+  background: rgba(13, 15, 20, 0.9);
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
+<<<<<<< HEAD
 .logo {
   font-family: var(--font-head);
   font-size: 1.3rem;
@@ -70,10 +123,41 @@ a { text-decoration: none; color: inherit; }
   padding: 40px 24px;
 }
 
+=======
+.navbar .logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent-green);
+  letter-spacing: -0.5px;
+}
+
+/* "Tracker" part stays white */
+.navbar .logo span {
+  color: var(--text-primary);
+}
+
+.nav-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+
+/* ── Main container ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+
+
+/* ── Summary Cards Grid ── */
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+<<<<<<< HEAD
   margin-bottom: 24px;
 }
 
@@ -137,20 +221,97 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 1px;
 }
 
+=======
+  margin-bottom: 32px;
+}
+
+.summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* lift up on hover */
+.summary-card:hover {
+  transform: translateY(-3px);
+}
+
+/* colored left bar - different for each card */
+.summary-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.summary-card.balance::before { background: var(--accent-blue); }
+.summary-card.income::before  { background: var(--accent-green); }
+.summary-card.expense::before { background: var(--accent-red); }
+
+.card-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.card-amount {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* each amount has its own color */
+.card-amount.balance { color: var(--accent-blue); }
+.card-amount.income  { color: var(--accent-green); }
+.card-amount.expense { color: var(--accent-red); }
+
+/* big emoji in the corner of each card */
+.card-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  opacity: 0.15;
+}
+
+
+/* ── Two column layout for form + chart ── */
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+<<<<<<< HEAD
   margin-bottom: 20px;
 }
 
 .form-card, .chart-card, .transactions-card {
   background: var(--card);
+=======
+  margin-bottom: 24px;
+}
+
+
+/* ── Form Card ── */
+.form-card {
+  background: var(--bg-card);
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px;
 }
 
+<<<<<<< HEAD
 .chart-card {
   display: flex;
   flex-direction: column;
@@ -174,6 +335,34 @@ a { text-decoration: none; color: inherit; }
   padding: 4px;
   margin-bottom: 18px;
   border: 1px solid var(--border);
+=======
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* small green dot next to section titles */
+.section-title .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  display: inline-block;
+}
+
+/* income/expense toggle switch */
+.type-toggle {
+  display: flex;
+  background: var(--bg-input);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 18px;
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 }
 
 .type-btn {
@@ -181,6 +370,7 @@ a { text-decoration: none; color: inherit; }
   padding: 10px;
   border: none;
   background: transparent;
+<<<<<<< HEAD
   color: var(--muted);
   font-family: var(--font-head);
   font-size: 0.88rem;
@@ -203,11 +393,47 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+=======
+  color: var(--text-secondary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* green when income selected */
+.type-btn.active-income {
+  background: var(--accent-green);
+  color: #000;
+}
+
+/* red when expense selected */
+.type-btn.active-expense {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+/* form input groups */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
+<<<<<<< HEAD
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -236,14 +462,71 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   cursor: pointer;
   transition: all var(--transition);
+=======
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* green border glow when focused */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent-green);
+}
+
+.form-group select option {
+  background: var(--bg-card);
+}
+
+/* submit button */
+.add-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent-green);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   margin-top: 6px;
   letter-spacing: 0.3px;
 }
 
 .add-btn:hover {
+<<<<<<< HEAD
   background: var(--accent2);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(56,189,248,0.25);
+=======
+  background: #00ffb3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 229, 160, 0.3);
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+
+/* ── Chart Card ── */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 }
 
 .chart-wrapper {
@@ -251,6 +534,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }
 
 .chart-empty {
@@ -265,11 +549,42 @@ a { text-decoration: none; color: inherit; }
 .filter-bar {
   display: flex;
   gap: 8px;
+=======
+  position: relative;
+}
+
+/* shown when there are no expenses yet */
+.chart-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.chart-empty .emoji {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+
+/* ── Transactions Card ── */
+.transactions-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+/* filter buttons row */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
 .filter-btn {
+<<<<<<< HEAD
   padding: 7px 16px;
   border: 1px solid var(--border);
   background: transparent;
@@ -284,11 +599,39 @@ a { text-decoration: none; color: inherit; }
 .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #020617; font-weight: 600; }
 
+=======
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+/* active filter gets green background */
+.filter-btn.active {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: #000;
+  font-weight: 500;
+}
+
+/* single transaction row */
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 .transaction-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
+<<<<<<< HEAD
   background: var(--bg);
   border-radius: 10px;
   margin-bottom: 8px;
@@ -351,11 +694,96 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
   font-size: 0.8rem;
   transition: all var(--transition);
+=======
+  background: var(--bg-input);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  /* animate in when added */
+  animation: slideIn 0.3s ease;
+}
+
+/* slides in from left when a new item is added */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.transaction-item:hover {
+  border-color: var(--border);
+}
+
+.tx-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* emoji icon box for each category */
+.tx-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.tx-info .tx-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.tx-info .tx-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.tx-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tx-amount {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* green for income, red for expense */
+.tx-amount.income  { color: var(--accent-green); }
+.tx-amount.expense { color: var(--accent-red); }
+
+/* delete button - turns red on hover */
+.del-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .del-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
 
 .no-transactions {
@@ -378,10 +806,46 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   gap: 10px;
+=======
+.del-btn:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #fff;
+}
+
+/* shown when no transactions match the filter */
+.no-transactions {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.no-transactions .emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+
+/* ── Toast Notification ── */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* hidden by default - JS adds .show class */
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
   transform: translateY(100px);
   opacity: 0;
   transition: all 0.3s ease;
   z-index: 999;
+<<<<<<< HEAD
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
@@ -391,10 +855,24 @@ a { text-decoration: none; color: inherit; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--card); border-radius: 2px; }
 
+=======
+  box-shadow: var(--shadow);
+}
+
+/* JS adds this class to show the toast */
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* ── Responsive - mobile screens ── */
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
 @media (max-width: 768px) {
   .summary-grid { grid-template-columns: 1fr; }
   .main-grid    { grid-template-columns: 1fr; }
   .navbar       { padding: 16px 20px; }
+<<<<<<< HEAD
   .container    { padding: 24px 16px; }
   .card-amount  { font-size: 1.6rem; }
 }
@@ -403,3 +881,7 @@ a { text-decoration: none; color: inherit; }
   .filter-bar { gap: 6px; }
   .filter-btn { padding: 6px 12px; font-size: 0.78rem; }
 }
+=======
+  .container    { padding: 20px 16px; }
+}
+>>>>>>> 60f21bd54bb44f5c1ecd29a15aee5a2d13a9215f
